@@ -1,8 +1,8 @@
-using Faithful.Hoops.Training.Models;
+using FaithfulHoopsTraining.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Faithful.Hoops.Training.Controllers
+namespace FaithfulHoopsTraining.Controllers
 {
     public class HomeController : Controller
     {

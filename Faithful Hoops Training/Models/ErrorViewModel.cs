@@ -1,4 +1,4 @@
-namespace Faithful.Hoops.Training.Models
+namespace FaithfulHoopsTraining.Models
 {
     public class ErrorViewModel
     {
