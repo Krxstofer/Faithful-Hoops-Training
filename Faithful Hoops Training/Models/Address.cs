@@ -6,8 +6,8 @@ namespace FaithfulHoopsTraining.Models
     {
         [Key]
         public int Id { get; set; }
-        public int String { get; set; }
-        public int City { get; set; }
-        public int State { get; set; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
     }
 }
