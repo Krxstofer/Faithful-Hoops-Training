@@ -1,10 +1,9 @@
 ﻿namespace FaithfulHoopsTraining.Data.Enum
 {
-    public enum TrainingCategory
+    public enum HoopSessionCategory
     {
         Expert,
         Intermediate,
         Beginner
-
     }
 }

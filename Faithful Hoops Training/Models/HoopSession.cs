@@ -4,7 +4,7 @@ using FaithfulHoopsTraining.Data.Enum;
 
 namespace FaithfulHoopsTraining.Models
 {
-    public class Hoops
+    public class HoopSession
     {
         [Key]
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace FaithfulHoopsTraining.Models
         [ForeignKey("Address")]
         public int AddressId { get; set; }
         public Address Address { get; set; }
-        public HoopsCategory HoopsCategory { get; set; }
+        public HoopSessionCategory HoopCategory { get; set; }
         [ForeignKey("AppUser")]
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
