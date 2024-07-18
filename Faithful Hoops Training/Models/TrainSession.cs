@@ -14,7 +14,7 @@ namespace FaithfulHoopsTraining.Models
             [ForeignKey("Address")]
             public int? AddressId { get; set; }
             public Address? Address { get; set; }
-            public TrainSessionCategory TrainCategory { get; set; }
+            public TrainSessionCategory TrainSessionCategory { get; set; }
             [ForeignKey("AppUser")]
             public string? AppUserId { get; set; }
             public AppUser? AppUser { get; set; }
