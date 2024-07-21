@@ -9,7 +9,6 @@ namespace FaithfulHoopsTraining.Data
         {
         
         }
-
         public DbSet<HoopSession> HoopSessions { get; set; }
         public DbSet<TrainSession> TrainSessions { get; set; }
         public DbSet<Address> Addresses { get; set; }
