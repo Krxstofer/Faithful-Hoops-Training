@@ -1,5 +1,4 @@
-﻿using FaithfulHoopsTraining.Data;
-using FaithfulHoopsTraining.Data.Enum;
+﻿using FaithfulHoopsTraining.Data.Enum;
 using FaithfulHoopsTraining.Models;
 using Microsoft.AspNetCore.Identity;
 
@@ -81,7 +80,7 @@ namespace FaithfulHoopsTraining.Data
                     {
                         new TrainSession()
                         {
-                            Title = "Running Race 1",
+                            Title = "Training Session 1",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first race",
                             TrainSessionCategory = TrainSessionCategory.Beginner,
@@ -94,7 +93,7 @@ namespace FaithfulHoopsTraining.Data
                         },
                         new TrainSession()
                         {
-                            Title = "Running Race 2",
+                            Title = "Training Session 2",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first race",
                             TrainSessionCategory = TrainSessionCategory.Expert,
