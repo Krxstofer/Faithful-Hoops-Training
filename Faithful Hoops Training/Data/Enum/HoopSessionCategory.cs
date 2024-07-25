@@ -2,8 +2,8 @@
 {
     public enum HoopSessionCategory
     {
-        Expert,
-        Intermediate,
-        Beginner
+        Regulation,
+        Recreation,
+        PickUp
     }
 }

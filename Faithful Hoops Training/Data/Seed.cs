@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace FaithfulHoopsTraining.Data
 {
-    public class Seed
+     public class Seed
     {
         public static void SeedData(IApplicationBuilder applicationBuilder)
         {
@@ -23,7 +23,7 @@ namespace FaithfulHoopsTraining.Data
                             Title = "Hoop Session 1",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first cinema",
-                            HoopSessionCategory = HoopSessionCategory.Beginner,
+                            HoopSessionCategory = HoopSessionCategory.PickUp,
                             Address = new Address()
                             {
                                 Street = "123 Main St",
@@ -36,7 +36,7 @@ namespace FaithfulHoopsTraining.Data
                             Title = "Hoop Session 2",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first cinema",
-                            HoopSessionCategory = HoopSessionCategory.Intermediate,
+                            HoopSessionCategory = HoopSessionCategory.Recreation,
                             Address = new Address()
                             {
                                 Street = "123 Main St",
@@ -49,7 +49,7 @@ namespace FaithfulHoopsTraining.Data
                             Title = "Hoop Session 3",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first club",
-                            HoopSessionCategory = HoopSessionCategory.Expert,
+                            HoopSessionCategory = HoopSessionCategory.Regulation,
                             Address = new Address()
                             {
                                 Street = "123 Main St",
@@ -62,7 +62,7 @@ namespace FaithfulHoopsTraining.Data
                             Title = "Hoop Session 4",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first club",
-                            HoopSessionCategory = HoopSessionCategory.Beginner,
+                            HoopSessionCategory = HoopSessionCategory.Recreation,
                             Address = new Address()
                             {
                                 Street = "123 Main St",
