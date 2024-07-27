@@ -1,6 +1,7 @@
 ﻿using FaithfulHoopsTraining.Data;
 using FaithfulHoopsTraining.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FaithfulHoopsTraining.Controllers
 {
@@ -17,9 +18,9 @@ namespace FaithfulHoopsTraining.Controllers
             List<HoopSession> hoopSessions = _context.HoopSessions.ToList();
             return View(hoopSessions);
         }
-        public IActionResult HomeDetail(int id) 
+        public IActionResult HoopDetail(int id) 
         { 
-            HoopSession hoopSession = _context.HoopSessions.FirstOrDefault(h => h.Id == id);
+            HoopSession hoopSession = _context.HoopSessions.Include(a => a.Address).FirstOrDefault(h => h.Id == id);
             return View(hoopSession);
         }
     }
