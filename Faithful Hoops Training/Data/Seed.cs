@@ -13,7 +13,7 @@ namespace FaithfulHoopsTraining.Data
                 var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 
                 context.Database.EnsureCreated();
-
+                // Hooping sessions
                 if (!context.HoopSessions.Any())
                 {
                     context.HoopSessions.AddRange(new List<HoopSession>()
@@ -21,7 +21,7 @@ namespace FaithfulHoopsTraining.Data
                         new HoopSession()
                         {
                             Title = "Hoop Session 1",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/virginiabeachva/35467617772_dbd9d1e4a1_o_A336853D-B962-4A21-9F3D023DCB1795A2_fbdcd872-99cc-4e1e-bf1aa64330c64f46.jpg",
                             Description = "This is the description of the first cinema",
                             HoopSessionCategory = HoopSessionCategory.PickUp,
                             Address = new Address()
@@ -73,7 +73,7 @@ namespace FaithfulHoopsTraining.Data
                     });
                     context.SaveChanges();
                 }
-                //Races
+                // Training sessions
                 if (!context.TrainSessions.Any())
                 {
                     context.TrainSessions.AddRange(new List<TrainSession>()
