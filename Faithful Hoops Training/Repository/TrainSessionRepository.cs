@@ -48,7 +48,8 @@ namespace FaithfulHoopsTraining.Repository
 
         public bool Update(TrainSession trainSession)
         {
-            throw new NotImplementedException();
+            _context.Update(trainSession);
+            return Save();
         }
     }
 }
