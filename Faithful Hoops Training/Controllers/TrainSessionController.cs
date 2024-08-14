@@ -1,4 +1,5 @@
 ﻿using FaithfulHoopsTraining.Data;
+using FaithfulHoopsTraining.Interfaces;
 using FaithfulHoopsTraining.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,19 +9,20 @@ namespace FaithfulHoopsTraining.Controllers
     public class TrainSessionController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ITrainSessionRepository _trainSessionRepository;
 
-        public TrainSessionController(ApplicationDbContext context)
+        public TrainSessionController(ITrainSessionRepository trainSessionRepository)
         {
-            _context = context;
+            _trainSessionRepository = trainSessionRepository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<TrainSession> trainSessions = _context.TrainSessions.ToList();
+            IEnumerable<TrainSession> trainSessions = await _trainSessionRepository.GetAll();
             return View(trainSessions);
         }
-        public IActionResult TrainDetail(int id)
+        public async Task<IActionResult> TrainDetail(int id)
         {
-            TrainSession trainSession = _context.TrainSessions.Include(a => a.Address).FirstOrDefault(t => t.Id == id);
+            TrainSession trainSession = await _trainSessionRepository.GetByIdAsync(id);
             return View(trainSession);
         }
     }

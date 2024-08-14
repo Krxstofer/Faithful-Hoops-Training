@@ -37,7 +37,7 @@ namespace FaithfulHoopsTraining.Repository
 
         public async Task<TrainSession> GetByIdAsync(int id)
         {
-            return await _context.TrainSessions.FirstOrDefaultAsync(t => t.Id == id);
+            return await _context.TrainSessions.Include(i => i.Address).FirstOrDefaultAsync();
         }
 
         public bool Save()

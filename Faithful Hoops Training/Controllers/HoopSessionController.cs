@@ -1,4 +1,5 @@
 ﻿using FaithfulHoopsTraining.Data;
+using FaithfulHoopsTraining.Interfaces;
 using FaithfulHoopsTraining.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,20 +8,20 @@ namespace FaithfulHoopsTraining.Controllers
 {
     public class HoopSessionController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IHoopSessionRepository _hoopSessionRepository;
 
-        public HoopSessionController(ApplicationDbContext context)
+        public HoopSessionController(IHoopSessionRepository hoopSessionRepository)
         {
-            _context = context;
+            _hoopSessionRepository = hoopSessionRepository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<HoopSession> hoopSessions = _context.HoopSessions.ToList();
+            IEnumerable<HoopSession> hoopSessions = await _hoopSessionRepository.GetAll();
             return View(hoopSessions);
         }
-        public IActionResult HoopDetail(int id) 
+        public async Task<IActionResult> HoopDetail(int id) 
         { 
-            HoopSession hoopSession = _context.HoopSessions.Include(a => a.Address).FirstOrDefault(h => h.Id == id);
+            HoopSession hoopSession = await _hoopSessionRepository.GetByIdAsync(id);
             return View(hoopSession);
         }
     }

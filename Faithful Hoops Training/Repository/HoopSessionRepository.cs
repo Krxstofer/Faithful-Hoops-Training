@@ -32,7 +32,7 @@ namespace FaithfulHoopsTraining.Repository
 
         public async Task<HoopSession> GetByIdAsync(int id)
         {
-            return await _context.HoopSessions.FirstOrDefaultAsync(h => h.Id == id);
+            return await _context.HoopSessions.Include(i => i.Address).FirstOrDefaultAsync(h => h.Id == id);
         }
 
         public async Task<IEnumerable<HoopSession>> GetAllHoopSessionsByCity(string city)
