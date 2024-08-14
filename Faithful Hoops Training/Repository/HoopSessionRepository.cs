@@ -35,7 +35,7 @@ namespace FaithfulHoopsTraining.Repository
             return await _context.HoopSessions.FirstOrDefaultAsync(h => h.Id == id);
         }
 
-        public async Task<IEnumerable<HoopSession>> GetHoopSessionsByCity(string city)
+        public async Task<IEnumerable<HoopSession>> GetAllHoopSessionsByCity(string city)
         {
             return await _context.HoopSessions.Where(c => c.Address.City.Contains(city)).ToListAsync();
         }

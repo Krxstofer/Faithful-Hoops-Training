@@ -6,7 +6,7 @@ namespace FaithfulHoopsTraining.Interfaces
     {
         Task<IEnumerable<HoopSession>> GetAll();
         Task<HoopSession> GetByIdAsync(int id);
-        Task<IEnumerable<HoopSession>> GetHoopSessionsByCity(string city);
+        Task<IEnumerable<HoopSession>> GetAllHoopSessionsByCity(string city);
         bool Add(HoopSession hoopSession);
         bool Update(HoopSession hoopSession);
         bool Delete(HoopSession hoopSession);
