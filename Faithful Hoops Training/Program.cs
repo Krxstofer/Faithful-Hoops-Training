@@ -1,10 +1,14 @@
 using FaithfulHoopsTraining.Data;
+using FaithfulHoopsTraining.Interfaces;
+using FaithfulHoopsTraining.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IHoopSessionRepository, HoopSessionRepository>();
+builder.Services.AddScoped<ITrainSessionRepository, TrainSessionRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
