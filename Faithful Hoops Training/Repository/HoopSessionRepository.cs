@@ -1,6 +1,7 @@
 ﻿using FaithfulHoopsTraining.Data;
 using FaithfulHoopsTraining.Interfaces;
 using FaithfulHoopsTraining.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FaithfulHoopsTraining.Repository
 {
@@ -14,32 +15,35 @@ namespace FaithfulHoopsTraining.Repository
         }
         public bool Add(HoopSession hoopSession)
         {
-            throw new NotImplementedException();
+            _context.Add(hoopSession);
+            return Save();
         }
 
         public bool Delete(HoopSession hoopSession)
         {
-            throw new NotImplementedException();
+            _context.Remove(hoopSession);
+            return Save();
         }
 
-        public Task<IEnumerable<HoopSession>> GetAll()
+        public async Task<IEnumerable<HoopSession>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.HoopSessions.ToListAsync();
         }
 
-        public Task<HoopSession> GetByIdAsync(int id)
+        public async Task<HoopSession> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.HoopSessions.FirstOrDefaultAsync(h => h.Id == id);
         }
 
-        public Task<IEnumerable<HoopSession>> GetHoopSessionsByCity(string city)
+        public async Task<IEnumerable<HoopSession>> GetHoopSessionsByCity(string city)
         {
-            throw new NotImplementedException();
+            return await _context.HoopSessions.Where(c => c.Address.City.Contains(city)).ToListAsync();
         }
 
         public bool Save()
         {
-            throw new NotImplementedException();
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false ;
         }
 
         public bool Update(HoopSession hoopSession)
