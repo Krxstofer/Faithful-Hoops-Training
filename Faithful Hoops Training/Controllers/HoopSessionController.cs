@@ -31,8 +31,14 @@ namespace FaithfulHoopsTraining.Controllers
 
         [HttpPost]
         public async Task<IActionResult> HoopCreate(HoopSession hoopSession)
-        { 
-            if
+        {
+            if (ModelState.IsValid) 
+            {
+                return View(hoopSession);
+            }
+
+            _hoopSessionRepository.Add(hoopSession);
+            return RedirectToAction("Index");
         }
     }
 }
