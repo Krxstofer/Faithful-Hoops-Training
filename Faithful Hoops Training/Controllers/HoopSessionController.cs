@@ -32,7 +32,7 @@ namespace FaithfulHoopsTraining.Controllers
         [HttpPost]
         public async Task<IActionResult> HoopCreate(HoopSession hoopSession)
         {
-            if (ModelState.IsValid) 
+            if (!ModelState.IsValid) 
             {
                 return View(hoopSession);
             }
