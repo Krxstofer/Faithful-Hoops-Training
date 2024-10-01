@@ -24,9 +24,15 @@ namespace FaithfulHoopsTraining.Controllers
             HoopSession hoopSession = await _hoopSessionRepository.GetByIdAsync(id);
             return View(hoopSession);
         }
-        public async Task<IActionResult> HoopCreate() 
+        public IActionResult HoopCreate() 
         {
          return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> HoopCreate(HoopSession hoopSession)
+        { 
+            if
         }
     }
 }
